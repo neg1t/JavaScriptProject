@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: sans-serif;
+  background-color: beige;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important; 
+	width: 1px !important; 
+	overflow: hidden;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  min-height: 75px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: 0 auto;
+  border-radius: 0 0 4px 4px;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 34px;
+  margin-left: 20px;
+}
+.search {
+  margin-right: 20px;
+}
+.search input {
+  outline: none;
+  max-width: 500px;
+  min-height: 40px;
+  border-radius: 15px;
+  padding-left: 15px;
+  font-size: 18px;
+  background-color: thistle;
+}
+
+.photo-list {
+  margin-top: 85px;
+  display: flex;
+  width: auto;
+}
+.photo-list__item {
+  padding-left: 10px; /* gutter size */
+  background-clip: padding-box;
+}
+
+.item__photo {
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.photo {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.photo__info {
+  background-color: rgba( 0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  border-radius: 1%;
+  padding-top: 20px;
+  position: absolute;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.photo__info a {
+  color: white;
+}
+
+.photo__info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.info__user {
+  padding-left: 5px;
+  display: flex;
+  align-items: center;
+}
+.user__profile-image {
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+.info__likes {
+  display: flex;
+  align-items: center;
+}
+.likes__button {
+  padding-right: 10px;
+}
+.like-icon {
+  display: block;
+  stroke: black;
+  stroke-width: 4px;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+}
+.like-icon:hover {
+  transform: scale(1.34);
+  fill: grey;
+  transition: 0.3s;
+}
+.likes__count {
+  padding-right: 5px;
+  font-size: 20px;
+}
+
+.photo__info-bottom {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 5px 5px 0;
+  margin-top: 3px;
+}
+.info__date {
+  font-size: 14px;
+}
+
+.photo__img {
+  border-radius: 1%;
+  width: 100%;
+  height: 100%;
+}
+
+.detail__photo {
+  display: block;
+  margin: 0 auto;
+  height: 84vh;
+  width: auto;
+}
+
+.photo__link {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 80%;
+  width: 100%;
+  cursor: zoom-in;
+  bottom: 0;
+}
+
+.auth-button {
+  border: none;
+  font-size: 14px;
+  margin-left: 12px;
+  background-color: #2158ff;
+  cursor: pointer;
+  border-radius: 4px;
+  min-height: 28px;
+  box-shadow: 0px 0px 7px 3px #6d91ff;
+  display: inline-block;
+  vertical-align: middle;
+}
+.cross-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.cross-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  fill: black;
+  transition: 0.2s;
+}
+.cross-icon:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+  transition: 0.2s;
+  fill: red;
+}
+
+.rgb {
+  background-image: linear-gradient(90deg,#003ec3, #0047de, #004ef5, #0e5bff, #1a63ff);
+  background-size: 400% 400%;
+  animation: gradient 3s infinite;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .detail__photo {
+    max-width: 68vh;
+    object-fit: cover;
+    max-height: 80vh;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .detail__photo {
+    max-width: 43vh;
+    height: inherit;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .photo-list__item {
+    padding-left: unset;
+}
+}
+
+@media screen and (max-width: 400px) {
+  .detail__photo {
+    max-width: 40vh;
+    height: inherit;
+  }
+}
